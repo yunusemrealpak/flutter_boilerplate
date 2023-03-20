@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:tuyap/core/network/models/base_entity.dart';
+import '../../../core/network/models/base_entity.dart';
 
 part 'application_config.freezed.dart';
 part 'application_config.g.dart';
@@ -24,7 +24,7 @@ class ApplicationConfig extends BaseEntity<ApplicationConfig>
       _$ApplicationConfigFromJson(data);
 
   @override
-  ApplicationConfig fromJson(data) {
-    return ApplicationConfig.fromJson(data);
+  ApplicationConfig fromJson(dynamic data) {
+    return ApplicationConfig.fromJson(data as Map<String, dynamic>);
   }
 }

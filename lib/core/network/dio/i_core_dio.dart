@@ -1,10 +1,10 @@
 import 'package:dio/dio.dart';
-import 'package:tuyap/core/network/models/base_entity.dart';
 
 import '../../enums/http_types.dart';
+import '../models/base_entity.dart';
 import '../models/base_response.dart';
 
-abstract class ICoreDio<T extends BaseResponse> {
+abstract class ICoreDio<T extends BaseResponse<T>> {
   void addHeader(Map<String, dynamic> value);
   void addAuthorizationHeader(String token);
   void removeHeader(String key);

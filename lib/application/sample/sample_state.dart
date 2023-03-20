@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:tuyap/application/core/base_state.dart';
+import '../core/base_state.dart';
 
 part 'sample_state.freezed.dart';
 

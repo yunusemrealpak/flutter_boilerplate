@@ -1,6 +1,6 @@
 part of '../dio/core_dio.dart';
 
-R? _parseBody<T extends BaseEntity, R>(
+R? _parseBody<T extends BaseEntity<T>, R>(
   dynamic responseBody, {
   required T model,
   String? entityKey,
@@ -13,9 +13,10 @@ R? _parseBody<T extends BaseEntity, R>(
 
   if (data == null) {
     customPrint(
-        fromWhere: 'Network Layer',
-        type: '_parseBody',
-        data: 'Be careful your data $data, Cannot be null');
+      fromWhere: 'Network Layer',
+      type: '_parseBody',
+      data: 'Be careful your data $data, Cannot be null',
+    );
     return null;
   }
 
@@ -29,18 +30,19 @@ R? _parseBody<T extends BaseEntity, R>(
         return NoResultResponse() as R;
       } else {
         customPrint(
-            fromWhere: 'Network Layer',
-            type: '_parseBody',
-            data: 'Be careful your data $data, I could not parse it');
+          fromWhere: 'Network Layer',
+          type: '_parseBody',
+          data: 'Be careful your data $data, I could not parse it',
+        );
         return null;
       }
     }
   } catch (e) {
     customPrint(
-        fromWhere: 'Network Layer',
-        type: '_parseBody',
-        data:
-            'Parse Error: $e - response body: $data T model: $T , R model: $R ');
+      fromWhere: 'Network Layer',
+      type: '_parseBody',
+      data: 'Parse Error: $e - response body: $data T model: $T , R model: $R ',
+    );
   }
   return null;
 }

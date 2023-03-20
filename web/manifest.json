@@ -1,6 +1,6 @@
 {
-    "name": "tuyap",
-    "short_name": "tuyap",
+    "name": "flutter_boilerplate",
+    "short_name": "flutter_boilerplate",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

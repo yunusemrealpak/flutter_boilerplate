@@ -1,17 +1,17 @@
 import 'package:injectable/injectable.dart';
-import 'package:tuyap/application/sample/sample_state.dart';
-import 'package:tuyap/domain/sample/i_sample_repository.dart';
 
+import '../../domain/sample/i_sample_repository.dart';
 import '../core/base_cubit.dart';
+import 'sample_state.dart';
 
 @injectable
 class SampleCubit extends BaseCubit<SampleState> {
   final ISampleRepository _sampleRepository;
   SampleCubit(this._sampleRepository) : super(SampleState.initial());
 
-  getSample() async {
+  Future<void> getSample() async {
     setLoading(true);
-    var result = await _sampleRepository.getConfig();
+    final result = await _sampleRepository.getConfig();
     setLoading(false);
     emit(state.copyWith(token: result?.mapStyle ?? ''));
   }

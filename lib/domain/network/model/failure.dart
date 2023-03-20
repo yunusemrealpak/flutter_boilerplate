@@ -10,5 +10,5 @@ class Failure with _$Failure {
   const Failure._();
 
   factory Failure.serverError() =>
-      const Failure(message: "Beklenmedik bir hata oluştu");
+      const Failure(message: 'Beklenmedik bir hata oluştu');
 }

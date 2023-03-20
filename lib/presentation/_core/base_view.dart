@@ -8,10 +8,10 @@ import '../../injection.dart';
 class BaseView<T extends BaseCubit<R>, R extends BaseState>
     extends StatefulWidget {
   const BaseView({
+    required this.builder,
     super.key,
     this.listener,
     this.listenWhen,
-    required this.builder,
     this.onCubitReady,
   });
   final Widget Function(BuildContext context, T cubit, R state) builder;

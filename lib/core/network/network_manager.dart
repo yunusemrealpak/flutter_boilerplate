@@ -1,10 +1,10 @@
 import 'package:dio/dio.dart';
-import 'package:tuyap/core/network/i_netwok_manager.dart';
-import 'package:tuyap/core/network/configuration/network_configuration.dart';
-import 'package:tuyap/core/network/models/base_response.dart';
 
+import 'configuration/network_configuration.dart';
 import 'dio/core_dio.dart';
 import 'dio/i_core_dio.dart';
+import 'i_netwok_manager.dart';
+import 'models/base_response.dart';
 
 class NetworkManager<T extends BaseResponse<T>> implements INetworkManager<T> {
   late ICoreDio<T> coreDio;

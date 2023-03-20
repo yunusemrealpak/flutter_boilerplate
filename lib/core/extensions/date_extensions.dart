@@ -11,7 +11,7 @@ extension DateExtensions on DateTime {
       "${day.toString().padLeft(2, "0")} ${getMonth(month)}, $year";
   String get getDateWithMonthNameWithoutYear =>
       "${day.toString().padLeft(2, "0")} ${getMonth(month)}";
-  String get getDateTimeStr => "$getDateStr $getHHmm";
+  String get getDateTimeStr => '$getDateStr $getHHmm';
 
   bool isSameDay(DateTime other) {
     return year == other.year && month == other.month && day == other.day;

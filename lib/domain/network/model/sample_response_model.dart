@@ -1,7 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
-import 'package:tuyap/core/network/models/base_response.dart';
+import '../../../core/network/models/base_response.dart';
 
 class SampleResponseModel extends BaseResponse<SampleResponseModel> {
   dynamic data;

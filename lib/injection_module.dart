@@ -1,8 +1,10 @@
+import 'package:flutter_boilerplate/app_config.dart';
+import 'package:flutter_boilerplate/core/enums/enviroment_types.dart';
 import 'package:injectable/injectable.dart';
-import 'package:tuyap/core/network/network_manager.dart';
-import 'package:tuyap/domain/network/model/sample_response_model.dart';
 
 import 'core/network/configuration/network_configuration.dart';
+import 'core/network/network_manager.dart';
+import 'domain/network/model/sample_response_model.dart';
 
 @module
 abstract class InjectionModule {
@@ -10,7 +12,9 @@ abstract class InjectionModule {
   NetworkManager<SampleResponseModel> get manager =>
       NetworkManager<SampleResponseModel>()
         ..initialize(
-          NetworkConfiguration('https://prevapi.bighawk.xyz'),
+          NetworkConfiguration(AppConfig.isDebug
+              ? EnvTypes.devApiUrl.getValue
+              : EnvTypes.apiUrl.getValue),
           responseModel: SampleResponseModel(),
           entityKey: 'data',
         );

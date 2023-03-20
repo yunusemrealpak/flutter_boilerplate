@@ -33,6 +33,7 @@
 /// [receiveTimeout]: Bir yanıtın alınmasını beklemek için ayarlanan maksimum süre.
 ///
 /// [sendTimeout]: Bir isteğin gönderilmesini beklemek için ayarlanan maksimum süre.
+library;
 
 class NetworkConfiguration {
   String baseUrl;

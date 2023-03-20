@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tuyap/application/sample/sample_cubit.dart';
-import 'package:tuyap/application/sample/sample_state.dart';
+import '../../application/sample/sample_cubit.dart';
+import '../../application/sample/sample_state.dart';
 
 import '../_core/base_view.dart';
 

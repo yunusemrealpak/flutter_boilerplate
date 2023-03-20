@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.tuyap">
+    package="com.example.flutter_boilerplate">
    <application
-        android:label="tuyap"
+        android:label="flutter_boilerplate"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

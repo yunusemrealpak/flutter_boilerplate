@@ -1,8 +1,9 @@
 import 'package:dartz/dartz.dart';
-import 'package:tuyap/core/network/network_manager.dart';
-import 'package:tuyap/domain/network/model/sample_response_model.dart';
+
 import '../../core/network/dio/i_core_dio.dart';
+import '../../core/network/network_manager.dart';
 import 'model/failure.dart';
+import 'model/sample_response_model.dart';
 
 typedef EitherFuture<T> = Future<Either<Failure, T>>;
 

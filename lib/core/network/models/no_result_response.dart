@@ -1,8 +1,8 @@
-import 'package:tuyap/core/network/models/base_entity.dart';
+import 'base_entity.dart';
 
-class NoResultResponse extends BaseEntity {
+class NoResultResponse extends BaseEntity<NoResultResponse> {
   @override
-  fromJson(data) {
+  NoResultResponse fromJson(dynamic data) {
     return NoResultResponse();
   }
 }

@@ -1,5 +1,3 @@
-import 'package:tuyap/core/network/models/base_entity.dart';
-
 abstract class BaseResponse<T> {
   int? statusCode;
 

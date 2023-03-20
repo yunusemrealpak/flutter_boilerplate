@@ -5,7 +5,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../application/core/base_cubit.dart';
 import '../../application/core/base_state.dart';
 
-class BaseConsumer<T extends BaseCubit<R>, R extends BaseState> extends StatefulWidget {
+class BaseConsumer<T extends BaseCubit<R>, R extends BaseState>
+    extends StatefulWidget {
   final BuildContext context;
   final Widget Function(BuildContext context, T cubit, R state) builder;
   final bool Function(R, R)? listenWhen;
@@ -13,8 +14,8 @@ class BaseConsumer<T extends BaseCubit<R>, R extends BaseState> extends Stateful
   final void Function(T cubit)? onCubitReady;
   const BaseConsumer(
     this.context, {
-    super.key,
     required this.builder,
+    super.key,
     this.listenWhen,
     this.listener,
     this.onCubitReady,
@@ -24,7 +25,8 @@ class BaseConsumer<T extends BaseCubit<R>, R extends BaseState> extends Stateful
   State<BaseConsumer<T, R>> createState() => _BaseConsumerState<T, R>();
 }
 
-class _BaseConsumerState<T extends BaseCubit<R>, R extends BaseState> extends State<BaseConsumer<T, R>> {
+class _BaseConsumerState<T extends BaseCubit<R>, R extends BaseState>
+    extends State<BaseConsumer<T, R>> {
   late BuildContext baseContext;
   late T cubit;
 

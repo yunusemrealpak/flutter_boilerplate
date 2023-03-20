@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 class MaskedTextController extends TextEditingController {
-  MaskedTextController({super.text, required this.mask, Map<String, RegExp>? translator}) {
+  MaskedTextController({
+    required this.mask,
+    super.text,
+    Map<String, RegExp>? translator,
+  }) {
     this.translator = translator ?? MaskedTextController.getDefaultTranslator();
 
     addListener(() {
@@ -17,7 +21,7 @@ class MaskedTextController extends TextEditingController {
     updateText(text);
   }
 
-  String mask;
+  late String mask;
 
   late Map<String, RegExp> translator;
 
@@ -30,9 +34,7 @@ class MaskedTextController extends TextEditingController {
   String _lastUpdatedText = '';
 
   void updateText(String text) {
-      this.text = _applyMask(mask, text);
-    
-  
+    this.text = _applyMask(mask, text);
 
     _lastUpdatedText = this.text;
   }
@@ -49,7 +51,8 @@ class MaskedTextController extends TextEditingController {
   void moveCursorToEnd() {
     final text = _lastUpdatedText;
     selection = TextSelection.fromPosition(
-        TextPosition(offset: text.length),);
+      TextPosition(offset: text.length),
+    );
   }
 
   @override
