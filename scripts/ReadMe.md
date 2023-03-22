@@ -2,7 +2,7 @@
 
 This folder contains bash scripts used in your project. These scripts are used to automate some of the processes in your project.
 
-[![tr](https://img.shields.io/badge/lang-tr-red.svg)](https://github.com/yunusemrealpak/flutter_boilerplate/tree/master/scripts/README-tr.md)
+[![tr](https://img.shields.io/badge/lang-tr-red.svg)](https://github.com/yunusemrealpak/flutter_boilerplate/blob/master/scripts/ReadMe-tr.md)
 
 ## 1. Localization
 

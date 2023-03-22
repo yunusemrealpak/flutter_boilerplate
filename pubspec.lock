@@ -49,6 +49,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.10.0"
+  auto_route:
+    dependency: "direct main"
+    description:
+      name: auto_route
+      sha256: "70b2461cc58d6a46c20859f23148b370165da183d21a82b783156f9a91d9c38b"
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.0.1"
+  auto_route_generator:
+    dependency: "direct main"
+    description:
+      name: auto_route_generator
+      sha256: a3f11c3b1e6e884d1592924f3b7212855f1c7c8791c12d3b41b87ab81fb9d3b8
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.0.0"
   bloc:
     dependency: transitive
     description:
