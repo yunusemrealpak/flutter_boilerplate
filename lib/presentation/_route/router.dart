@@ -1,5 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import '../app/view/app_view.dart';
+import '../app/view/home/view/home_view.dart';
+import '../app/view/profile/view/profile_view.dart';
 import '../auth/view/forgot_password/forgot_password_view.dart';
 import '../auth/view/login/login_view.dart';
 import '../auth/view/register/view/register_view.dart';
@@ -18,26 +21,20 @@ class AppRouter extends _$AppRouter {
     AutoRoute(path: RoutePaths.LOGIN, page: LoginRoute.page),
     AutoRoute(path: RoutePaths.REGISTER, page: RegisterRoute.page),
     AutoRoute(path: RoutePaths.FORGOT_PASSWORD, page: ForgotPasswordRoute.page),
-
-    // Sample for nested routes
-    // AutoRoute(
-    //   path: RoutePaths.APP,
-    //   page: AppRoute.page,
-    //   children: [
-    //     RedirectRoute(path: '', redirectTo: 'home'),
-    //     AutoRoute(
-    //       path: RoutePaths.HOME,
-    //       page: HomeRoute.page,
-    //     ),
-    //     AutoRoute(
-    //       path: RoutePaths.PROFILE,
-    //       page: ProfileRoute.page,
-    //     ),
-    //     AutoRoute(
-    //       path: RoutePaths.OTHERS,
-    //       page: OthersRoute.page,
-    //     ),
-    //   ],
-    // ),
+    AutoRoute(
+      path: RoutePaths.APP,
+      page: AppRoute.page,
+      children: [
+        RedirectRoute(path: '', redirectTo: 'home'),
+        AutoRoute(
+          path: RoutePaths.HOME,
+          page: HomeRoute.page,
+        ),
+        AutoRoute(
+          path: RoutePaths.PROFILE,
+          page: ProfileRoute.page,
+        ),
+      ],
+    ),
   ];
 }

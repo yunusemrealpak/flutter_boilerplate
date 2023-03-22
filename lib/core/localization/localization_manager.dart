@@ -6,7 +6,6 @@ class LocalizationManager {
   List<Locale> supportedLocales = const <Locale>[
     Locale('en'),
     Locale('tr'),
-    Locale('ar'),
   ];
 
   factory LocalizationManager() {

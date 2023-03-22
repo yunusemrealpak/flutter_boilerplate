@@ -1,4 +1,8 @@
 {
     "appTitle": "My Tr App",
-    "appLang": "Türkçe"
+    "appLang": "Türkçe",
+    "tabs": {
+        "home": "Ana Sayfa",
+        "profile": "Profil"
+    }
 }

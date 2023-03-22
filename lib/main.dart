@@ -7,7 +7,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'core/localization/localization_manager.dart';
 import 'core/storage/shared_preferences/shared_preferences_helper.dart';
 import 'injection.dart';
-import 'presentation/sample/sample_language_view.dart';
+import 'presentation/_route/router.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,6 +27,8 @@ Future<void> main() async {
   );
 }
 
+final appRouter = AppRouter();
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -36,7 +38,7 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => di<DeeplinkCubit>(), lazy: false),
       ],
-      child: MaterialApp(
+      child: MaterialApp.router(
         title: 'Flutter Boilerplate',
         theme: ThemeData(
           primarySwatch: Colors.blue,
@@ -44,7 +46,7 @@ class MyApp extends StatelessWidget {
         localizationsDelegates: context.localizationDelegates,
         supportedLocales: context.supportedLocales,
         locale: context.locale,
-        home: const SampleLanguageView(),
+        routerConfig: appRouter.config(),
       ),
     );
   }

@@ -1,4 +1,8 @@
 {
     "appTitle": "My Eng App",
-    "appLang": "English"
+    "appLang": "English",
+    "tabs": {
+        "home": "Home",
+        "profile": "Profile"
+    }
 }
