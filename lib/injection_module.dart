@@ -8,7 +8,7 @@ import 'domain/network/model/sample_response_model.dart';
 
 @module
 abstract class InjectionModule {
-  @lazySingleton
+  @singleton
   NetworkManager<SampleResponseModel> get manager =>
       NetworkManager<SampleResponseModel>()
         ..initialize(

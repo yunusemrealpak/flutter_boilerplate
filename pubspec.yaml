@@ -12,15 +12,17 @@ dependencies:
   dartz: ^0.10.1
   dio: ^5.0.3
   easy_localization: ^3.0.1
+  firebase_dynamic_links: ^5.0.17
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.2
   flutter_dotenv: ^5.0.2
   freezed_annotation: ^2.2.0
   get_it: ^7.2.0
+  hive_flutter: ^1.1.0
   injectable: ^2.1.0
   json_annotation: ^4.8.0
-  provider: ^6.0.5
+  share_plus: ^6.3.1
   shared_preferences: ^2.0.18
 
 dev_dependencies:
@@ -30,6 +32,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   freezed: ^2.3.2
+  hive_generator: ^2.0.0
   injectable_generator: ^2.1.4
   json_serializable: ^6.6.1
   very_good_analysis: ^4.0.0+1
