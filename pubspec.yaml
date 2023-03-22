@@ -9,7 +9,6 @@ environment:
 
 dependencies:
   auto_route: ^6.0.1
-  auto_route_generator: ^6.0.0
   cupertino_icons: ^1.0.2
   dartz: ^0.10.1
   dio: ^5.0.3
@@ -30,6 +29,7 @@ dependencies:
   shared_preferences: ^2.0.18
 
 dev_dependencies:
+  auto_route_generator: ^6.0.0
   build_runner: null
   flutter_launcher_icons: ^0.12.0
   flutter_lints: ^2.0.0

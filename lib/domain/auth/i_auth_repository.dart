@@ -1,6 +1,5 @@
-import 'package:flutter_boilerplate/domain/auth/model/user.dart';
-
 import '../network/base_repository.dart';
+import 'model/user.dart';
 
 abstract class IAuthRepository extends BaseRepository {
   IAuthRepository(super.manager);

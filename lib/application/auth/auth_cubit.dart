@@ -1,12 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_boilerplate/application/session/session_cubit.dart';
-import 'package:flutter_boilerplate/domain/auth/i_auth_repository.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../domain/auth/i_auth_repository.dart';
 import '../../domain/auth/model/user.dart';
 import '../../presentation/_route/router.dart';
 import '../core/base_cubit.dart';
+import '../session/session_cubit.dart';
 import 'auth_state.dart';
 
 @injectable

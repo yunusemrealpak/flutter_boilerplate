@@ -1,15 +1,15 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter_boilerplate/common/constants/hive_constants.dart';
-import 'package:flutter_boilerplate/core/storage/hive/i_cache_service.dart';
-import 'package:flutter_boilerplate/domain/cache/model/token_model.dart';
-import 'package:flutter_boilerplate/domain/network/base_repository.dart';
-import 'package:flutter_boilerplate/domain/auth/model/user.dart';
-import 'package:flutter_boilerplate/domain/network/model/sample_response_model.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../common/constants/hive_constants.dart';
 import '../../core/enums/http_types.dart';
+import '../../core/storage/hive/i_cache_service.dart';
 import '../../domain/auth/i_auth_repository.dart';
+import '../../domain/auth/model/user.dart';
+import '../../domain/cache/model/token_model.dart';
+import '../../domain/network/base_repository.dart';
 import '../../domain/network/model/failure.dart';
+import '../../domain/network/model/sample_response_model.dart';
 import '../../domain/network/network_paths.dart';
 
 @LazySingleton(as: IAuthRepository)
