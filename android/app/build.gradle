@@ -60,6 +60,22 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+
+    flavorDimensions "app"
+    productFlavors {
+        dev {
+           dimension "app"
+           resValue "string", "app_name", "Flutter Boilerplate Dev"
+           applicationIdSuffix ".dev"
+           versionNameSuffix "-dev"
+        }
+        prod {
+           dimension "app"
+           resValue "string", "app_name", "Flutter Boilerplate"
+           applicationIdSuffix ""
+           versionNameSuffix ""
+        }
+    }
 }
 
 flutter {
@@ -69,3 +85,5 @@ flutter {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
+
+apply plugin: 'com.google.gms.google-services'

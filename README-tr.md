@@ -36,6 +36,66 @@ Bu projeyi klonladıktan sonra, `.env` dosyasındaki api url'leri değiştirmeyi
 - hive_flutter, shared_preferences
 - firebase_dynamic_links
 
+## Features
+
+- Authentication
+- Localization
+- Dynamic Links
+- Navigation
+- State Management
+- Dependency Injection
+- Environment Variables
+- Responsive UI
+- Flavors (dev, prod)
+
+### Flavor
+
+Bu proje iki flavor'a sahiptir: dev ve prod. Flavor'ı `android/app/build.gradle` dosyasında değiştirebilirsiniz.
+
+Her bir flavor için launch.json dosyası da yapılandırılmıştır. Aşağıdaki komutlarla uygulamanızı çalıştırabilirsiniz.
+
+```json
+  {
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch development",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "debug",
+            "program": "lib/main_dev.dart",
+            "args": [
+                "--flavor",
+                "dev",
+            ]
+        },
+        {
+            "name": "Launch production",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "debug",
+            "program": "lib/main_prod.dart",
+            "args": [
+                "--flavor",
+                "prod",
+            ]
+        },
+    ]
+  }
+```
+
+```bash
+  flutter run -t lib/main_dev.dart --flavor dev
+  flutter run -t lib/main_prod.dart --flavor prod
+```
+
+veya
+
+```bash
+  sh scripts/build.sh -apk <flavor_name>
+  sh scripts/build.sh -bundle <flavor_name>
+```
+
 ## Destek
 
 Bu projeyi beğendiyseniz, lütfen bir yıldız verin ⭐
