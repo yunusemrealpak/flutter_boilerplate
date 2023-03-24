@@ -149,10 +149,10 @@ packages:
     dependency: "direct main"
     description:
       name: busbus
-      sha256: cb2d0b1046fda5beec40d8496c155495bdd3c1d5a930e4f34f723c769f682c10
+      sha256: "92daf4101461341d02c7de3e7eca0230a5726b3911adeca17490720bdd0cfe96"
       url: "https://pub.dev"
     source: hosted
-    version: "0.1.1"
+    version: "0.1.3"
   characters:
     dependency: transitive
     description:

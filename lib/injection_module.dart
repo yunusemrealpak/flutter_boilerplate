@@ -7,7 +7,7 @@ import 'domain/network/model/sample_response_model.dart';
 @module
 abstract class InjectionModule {
   @singleton
-  NetworkManager<SampleResponseModel> get manager =>
+  INetworkManager<SampleResponseModel> get manager =>
       NetworkManager<SampleResponseModel>()
         ..initialize(
           NetworkConfiguration(

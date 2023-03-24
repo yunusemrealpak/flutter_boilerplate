@@ -7,7 +7,7 @@ import 'model/sample_response_model.dart';
 typedef EitherFuture<T> = Future<Either<Failure, T>>;
 
 abstract class BaseRepository {
-  late NetworkManager<SampleResponseModel> manager;
+  late INetworkManager<SampleResponseModel> manager;
   BaseRepository(this.manager);
 
   ICoreDio get coreDio => manager.coreDio;
