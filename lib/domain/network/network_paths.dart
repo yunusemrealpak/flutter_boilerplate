@@ -1,4 +1,6 @@
 class NetworkPaths {
+  static const String getSamplePost = '/posts';
+
   // Auth
   static const String login = '/api/Auth/Login';
   static const String register = '/api/Auth/Register';

@@ -18,7 +18,6 @@ abstract class InjectionModule {
                 : EnvTypes.apiUrl.getValue,
           ),
           responseModel: SampleResponseModel(),
-          entityKey: 'data',
           cacheStoreKey: 'boilerplate_cache',
         );
 }

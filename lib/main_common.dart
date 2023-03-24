@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'app_flavor_config.dart';
+import 'application/app/app_cubit.dart';
 import 'application/services/deeplink/deeplink_cubit.dart';
+import 'application/session/session_cubit.dart';
 import 'injection.dart';
 import 'presentation/_route/router.dart';
 
@@ -25,6 +27,8 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => di<DeeplinkCubit>(), lazy: false),
+        BlocProvider(create: (context) => di<SessionCubit>(), lazy: false),
+        BlocProvider(create: (context) => di<AppCubit>(), lazy: false),
       ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: config.debugShowCheckedModeBanner,

@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_boilerplate/presentation/sample/sample_network_view.dart';
 
 @RoutePage()
 class HomeView extends StatelessWidget {
@@ -7,18 +8,6 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Column(
-          children: [
-            Expanded(
-              child: Center(
-                child: Text('Home View'),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
+    return const SampleNetworkView();
   }
 }

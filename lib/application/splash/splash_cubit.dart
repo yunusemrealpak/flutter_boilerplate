@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter_boilerplate/presentation/_route/router.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../presentation/_route/route_paths.dart';
@@ -11,7 +12,7 @@ class SplashCubit extends BaseCubit<SplashState> {
 
   void init() {
     Future.delayed(const Duration(seconds: 2), () {
-      context.router.pushNamed(RoutePaths.APP);
+      context.router.replaceAll([const AppRoute()]);
     });
   }
 
