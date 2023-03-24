@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:dio_cache_interceptor/dio_cache_interceptor.dart';
 
 import '../../enums/http_types.dart';
 import '../models/base_entity.dart';
@@ -22,5 +23,9 @@ abstract class ICoreDio<T extends BaseResponse<T>> {
     Map<String, dynamic>? queryParameters,
     CancelToken? cancelToken,
     void Function(int, int)? onSendProgress,
+
+    /// Cache Options
+    CachePolicy? cachePolicy,
+    Duration? maxStale,
   });
 }

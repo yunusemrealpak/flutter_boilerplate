@@ -45,7 +45,7 @@ class NetworkManager<T extends BaseResponse<T>> implements INetworkManager<T> {
       store: cacheStore,
       policy: CachePolicy.noCache,
       priority: CachePriority.high,
-      maxStale: const Duration(minutes: 5),
+      maxStale: const Duration(minutes: 1),
       hitCacheOnErrorExcept: [401, 404],
       keyBuilder: (request) {
         return request.uri.toString();
@@ -78,7 +78,7 @@ class NetworkManager<T extends BaseResponse<T>> implements INetworkManager<T> {
   }
 
   @override
-  void cleanCache() {
-    cacheStore.clean();
+  Future<void> cleanCache() async {
+    await cacheStore.clean();
   }
 }

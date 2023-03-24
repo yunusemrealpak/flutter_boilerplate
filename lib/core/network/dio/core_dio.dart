@@ -44,13 +44,19 @@ class CoreDio<T extends BaseResponse<T>>
 
     /// Cache Options
     CachePolicy? cachePolicy,
-    Nullable<Duration>? maxStale,
+    Duration? maxStale,
   }) async {
     try {
       final response = await request<dynamic>(
         path,
         data: data,
-        options: cacheOptions.copyWith(maxStale: maxStale).toOptions().copyWith(
+        options: cacheOptions
+            .copyWith(
+              policy: cachePolicy,
+              maxStale: Nullable<Duration>(maxStale),
+            )
+            .toOptions()
+            .copyWith(
               method: type.value,
               contentType: contentType,
               responseType: responseType,
@@ -59,9 +65,18 @@ class CoreDio<T extends BaseResponse<T>>
         onSendProgress: onSendProgress,
         cancelToken: cancelToken,
       );
+
+      customPrint(
+        fromWhere: 'CoreDio',
+        type: 'send - http statusCode',
+        data: '${response.statusCode} - ${DateTime.now()}',
+      );
+
       switch (response.statusCode) {
         case HttpStatus.ok:
         case HttpStatus.accepted:
+        case HttpStatus
+            .notModified: // 304 : Cache Policy is used and data is not modified since last request (maxStale)
           responseModel =
               responseModel.fromJson(response.data as Map<String, dynamic>);
 
