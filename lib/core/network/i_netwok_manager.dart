@@ -7,4 +7,10 @@ mixin INetworkManager<T extends BaseResponse<T>> {
     required T responseModel,
     String? entityKey,
   });
+
+  void addHeader(Map<String, dynamic> value);
+  void addAuthorizationHeader(String token);
+  void removeHeader(String key);
+  void removeAuthorizationHeader();
+  void cleanCache();
 }

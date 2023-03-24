@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:dio/io.dart';
+import 'package:dio_cache_interceptor/dio_cache_interceptor.dart';
 
 import '../../enums/http_types.dart';
 import '../../utility/helper_functions.dart';
@@ -15,10 +16,16 @@ part '../parted_methods/model_parser.dart';
 class CoreDio<T extends BaseResponse<T>>
     with DioMixin
     implements Dio, ICoreDio<T> {
+  late CacheOptions cacheOptions;
   late T responseModel;
   String? entityKey;
 
-  CoreDio(BaseOptions options, this.responseModel, this.entityKey) {
+  CoreDio(
+    BaseOptions options,
+    this.cacheOptions,
+    this.responseModel,
+    this.entityKey,
+  ) {
     this.options = options;
     httpClientAdapter = IOHttpClientAdapter();
   }
@@ -34,16 +41,20 @@ class CoreDio<T extends BaseResponse<T>>
     Map<String, dynamic>? queryParameters,
     CancelToken? cancelToken,
     void Function(int, int)? onSendProgress,
+
+    /// Cache Options
+    CachePolicy? cachePolicy,
+    Nullable<Duration>? maxStale,
   }) async {
     try {
       final response = await request<dynamic>(
         path,
         data: data,
-        options: Options(
-          method: type.value,
-          contentType: contentType,
-          responseType: responseType,
-        ),
+        options: cacheOptions.copyWith(maxStale: maxStale).toOptions().copyWith(
+              method: type.value,
+              contentType: contentType,
+              responseType: responseType,
+            ),
         queryParameters: queryParameters,
         onSendProgress: onSendProgress,
         cancelToken: cancelToken,

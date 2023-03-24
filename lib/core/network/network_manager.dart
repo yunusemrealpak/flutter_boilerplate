@@ -1,4 +1,7 @@
 import 'package:dio/dio.dart';
+import 'package:dio_cache_interceptor/dio_cache_interceptor.dart';
+import 'package:dio_cache_interceptor_hive_store/dio_cache_interceptor_hive_store.dart';
+import 'package:path_provider/path_provider.dart';
 
 import 'configuration/network_configuration.dart';
 import 'dio/core_dio.dart';
@@ -8,13 +11,15 @@ import 'models/base_response.dart';
 
 class NetworkManager<T extends BaseResponse<T>> implements INetworkManager<T> {
   late ICoreDio<T> coreDio;
+  late HiveCacheStore cacheStore;
 
   @override
-  void initialize(
+  Future<void> initialize(
     NetworkConfiguration configuration, {
     required T responseModel,
     String? entityKey,
-  }) {
+    String? cacheStoreKey,
+  }) async {
     final baseOptions = BaseOptions(
       baseUrl: configuration.baseUrl,
       connectTimeout: configuration.connectTimeout,
@@ -30,23 +35,50 @@ class NetworkManager<T extends BaseResponse<T>> implements INetworkManager<T> {
       baseOptions.headers['apiKey'] = configuration.apiKey;
     }
 
-    coreDio = CoreDio<T>(baseOptions, responseModel, entityKey);
+    final cacheDir = await getTemporaryDirectory();
+    cacheStore = HiveCacheStore(
+      cacheDir.path,
+      hiveBoxName: cacheStoreKey ?? 'network_cache',
+    );
+
+    final cacheOptions = CacheOptions(
+      store: cacheStore,
+      policy: CachePolicy.noCache,
+      priority: CachePriority.high,
+      maxStale: const Duration(minutes: 5),
+      hitCacheOnErrorExcept: [401, 404],
+      keyBuilder: (request) {
+        return request.uri.toString();
+      },
+    );
+
+    coreDio = CoreDio<T>(baseOptions, cacheOptions, responseModel, entityKey)
+      ..addInterceptor(DioCacheInterceptor(options: cacheOptions));
   }
 
+  @override
   void addHeader(Map<String, dynamic> value) {
     coreDio.addHeader(value);
   }
 
+  @override
   void addAuthorizationHeader(String token) {
     coreDio.removeAuthorizationHeader();
     coreDio.addAuthorizationHeader(token);
   }
 
+  @override
   void removeHeader(String key) {
     coreDio.removeHeader(key);
   }
 
+  @override
   void removeAuthorizationHeader() {
     coreDio.removeAuthorizationHeader();
+  }
+
+  @override
+  void cleanCache() {
+    cacheStore.clean();
   }
 }

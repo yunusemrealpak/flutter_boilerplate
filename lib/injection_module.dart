@@ -12,10 +12,13 @@ abstract class InjectionModule {
   NetworkManager<SampleResponseModel> get manager =>
       NetworkManager<SampleResponseModel>()
         ..initialize(
-          NetworkConfiguration(AppConfig.isDebug
-              ? EnvTypes.devApiUrl.getValue
-              : EnvTypes.apiUrl.getValue),
+          NetworkConfiguration(
+            AppConfig.isDebug
+                ? EnvTypes.devApiUrl.getValue
+                : EnvTypes.apiUrl.getValue,
+          ),
           responseModel: SampleResponseModel(),
           entityKey: 'data',
+          cacheStoreKey: 'boilerplate_cache',
         );
 }
