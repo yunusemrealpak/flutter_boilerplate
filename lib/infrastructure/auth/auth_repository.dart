@@ -1,8 +1,8 @@
+import 'package:busbus/busbus.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../common/constants/hive_constants.dart';
-import '../../core/enums/http_types.dart';
 import '../../core/storage/hive/i_cache_service.dart';
 import '../../domain/auth/i_auth_repository.dart';
 import '../../domain/auth/model/user.dart';

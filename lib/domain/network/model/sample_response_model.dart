@@ -1,7 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
-import '../../../core/network/models/base_response.dart';
+import 'package:busbus/busbus.dart';
 
 class SampleResponseModel extends BaseResponse<SampleResponseModel> {
   dynamic data;

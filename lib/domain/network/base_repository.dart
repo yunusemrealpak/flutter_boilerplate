@@ -1,7 +1,6 @@
+import 'package:busbus/busbus.dart';
 import 'package:dartz/dartz.dart';
 
-import '../../core/network/dio/i_core_dio.dart';
-import '../../core/network/network_manager.dart';
 import 'model/failure.dart';
 import 'model/sample_response_model.dart';
 

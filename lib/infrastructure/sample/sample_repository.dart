@@ -1,8 +1,8 @@
+import 'package:busbus/busbus.dart';
 import 'package:dio_cache_interceptor/dio_cache_interceptor.dart';
 import 'package:flutter_boilerplate/core/utility/helper_functions.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../core/enums/http_types.dart';
 import '../../domain/network/model/sample_response_model.dart';
 import '../../domain/network/network_paths.dart';
 import '../../domain/sample/i_sample_repository.dart';

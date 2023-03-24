@@ -1,4 +1,4 @@
-import 'package:flutter_boilerplate/core/network/models/base_entity.dart';
+import 'package:busbus/busbus.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'sample_post_model.freezed.dart';

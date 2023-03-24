@@ -145,6 +145,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "8.4.4"
+  busbus:
+    dependency: "direct main"
+    description:
+      name: busbus
+      sha256: cb2d0b1046fda5beec40d8496c155495bdd3c1d5a930e4f34f723c769f682c10
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.1"
   characters:
     dependency: transitive
     description:
@@ -242,7 +250,7 @@ packages:
     source: hosted
     version: "0.10.1"
   dio:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: dio
       sha256: "3e5c4a94d112540d0c9a6b7f3969832e1604eb8cde0f88d0808382f9f632100b"
@@ -250,7 +258,7 @@ packages:
     source: hosted
     version: "5.0.3"
   dio_cache_interceptor:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: dio_cache_interceptor
       sha256: "24f5fb2fbffea25325e9eabc1501b6582d0928b0ef5cb9127c920e58fbf6ca62"
@@ -258,7 +266,7 @@ packages:
     source: hosted
     version: "3.4.0"
   dio_cache_interceptor_hive_store:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: dio_cache_interceptor_hive_store
       sha256: "7a376b1db0a153e16ad51ce0cf1d2549ca14a2ddf462523c362fac9e077c5f14"
@@ -470,7 +478,7 @@ packages:
     source: hosted
     version: "2.2.0"
   hive:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: hive
       sha256: "8dcf6db979d7933da8217edcec84e9df1bdb4e4edc7fc77dbd5aa74356d6d941"
@@ -654,7 +662,7 @@ packages:
     source: hosted
     version: "1.0.1"
   path_provider:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: path_provider
       sha256: c7edf82217d4b2952b2129a61d3ad60f1075b9299e629e149a8d2e39c2e6aad4

@@ -5,6 +5,7 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
+import 'package:busbus/busbus.dart' as _i9;
 import 'package:flutter_boilerplate/application/app/app_cubit.dart' as _i3;
 import 'package:flutter_boilerplate/application/auth/auth_cubit.dart' as _i20;
 import 'package:flutter_boilerplate/application/sample/sample_cubit.dart'
@@ -15,7 +16,6 @@ import 'package:flutter_boilerplate/application/session/session_cubit.dart'
     as _i11;
 import 'package:flutter_boilerplate/application/splash/splash_cubit.dart'
     as _i12;
-import 'package:flutter_boilerplate/core/network/network_manager.dart' as _i9;
 import 'package:flutter_boilerplate/core/storage/hive/i_cache_service.dart'
     as _i4;
 import 'package:flutter_boilerplate/domain/auth/i_auth_repository.dart' as _i13;
