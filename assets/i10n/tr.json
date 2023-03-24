@@ -1,5 +1,6 @@
 {
-    "appTitle": "My Tr App",
+    "appTitleDev": "My Tr App Dev",
+    "appTitleProd": "My Tr App Prod",
     "appLang": "Türkçe",
     "tabs": {
         "home": "Ana Sayfa",
