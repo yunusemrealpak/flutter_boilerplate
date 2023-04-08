@@ -16,12 +16,36 @@ Clone this project and set up your development environment.
 
 ## Usage
 
-After cloning this project, don't forget to change api urls in `.env` file. Otherwise, your application will not work.
+- After cloning this project, don't forget to change api urls in `.env` file. Otherwise, your application will not work.
 
 ```bash
   API_URL=<your-api-url>
   DEV_API_URL=<your-dev-api-url>
 ```
+
+- Set up your flavors under android/app/build.gradle for Android.
+
+- Edit the bundle identifier and display name of your app for Apple as shown in the screenshots.
+
+![bundle_identifier](./screenshots/bundle_identifier.png)
+
+![display_name](./screenshots/app_display_name.png)
+
+- It's time to configure your Firebase settings for the project. First, create two projects for dev and prod in your Firebase account.
+
+![firebase](./screenshots/firebase_projects.png)
+
+- Integrate with two Firebase projects with different bundle ids for Android and add the json files to the fields shown in the image.
+
+![android_google_services](./screenshots/android_google_services.png)
+
+- Follow the same steps for iOS and add the json files to the fields shown in the image.
+
+![firebase](./screenshots/iOS_google_services.png)
+
+- Great. Now you are ready to run your project. The launch.json file will come preconfigured in VS Code. You can make edits as desired under .vscode in the root directory.
+
+![firebase](./screenshots/launch_type.png)
 
 ## Packages
 

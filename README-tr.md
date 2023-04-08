@@ -16,12 +16,36 @@ Bu projeyi klonlayın ve geliştirme ortamınızı ayarlayın.
 
 ## Kullanım
 
-Bu projeyi klonladıktan sonra, `.env` dosyasındaki api url'leri değiştirmeyi unutmayın. Aksi takdirde, uygulamanız çalışmayacaktır.
+- Bu projeyi klonladıktan sonra, `.env` dosyasındaki api url'leri değiştirmeyi unutmayın. Aksi takdirde, uygulamanız çalışmayacaktır.
 
 ```bash
   API_URL=<your-api-url>
   DEV_API_URL=<your-dev-api-url>
 ```
+
+- Android için android/app/build.gradle altında flavor larınızı ayarlayın.
+
+- Apple için uygulamanın bundle identifier ve display name ini aşağıdaki ekran görüntülerindeki gibi düzenleyin.
+
+![bundle_identifier](./screenshots/bundle_identifier.png)
+
+![display_name](./screenshots/app_display_name.png)
+
+- Projenizin firebase ayarlarını yapma zamanı. Öncelikle firebase hesabınızdan dev ve prod için iki proje açın.
+
+![firebase](./screenshots/firebase_projects.png)
+
+- Android için iki farklı bundle id ile iki firebase projesine entegre olun ve json dosyalarını görseldeki alanlara ekleyin.
+
+![android_google_services](./screenshots/android_google_services.png)
+
+- iOS için de aynı adımları izleyin ve görseldeki alanlara json dosyalarını ekleyin.
+
+![firebase](./screenshots/iOS_google_services.png)
+
+- Harika. Artık projenizi çalıştırmaya hazırsınız. VS Code da launch.json dosyası ayarlı bir şekilde gelecek. Ana dizinde .vscode altında istediğiniz gibi düzenleme yapabilirsiniz.
+
+![firebase](./screenshots/launch_type.png)
 
 ## Paketler
 
