@@ -4,7 +4,7 @@ import 'package:busenet/busenet.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../app_config.dart';
-import '../../core/enums/enviroment_types.dart';
+import '../../core/env/env.dart';
 import 'model/response_model.dart';
 
 @singleton
@@ -19,7 +19,7 @@ class AppNetworkManager {
   Future<void> init() async {
     await _networkManager.initialize(
       NetworkConfiguration(
-        AppConfig.isDebug ? EnvTypes.devApiUrl.getValue : EnvTypes.apiUrl.getValue,
+        AppConfig.isDebug ? AppEnv.devApiUrl : AppEnv.apiUrl,
       ),
       responseModel: ResponseModel(),
       entityKey: 'entity',

@@ -12,4 +12,6 @@ class AppFlavorConfig {
     this.debugShowCheckedModeBanner = true,
     this.theme,
   });
+
+  AppFlavorConfig.initial() : this(flavor: '', title: '');
 }

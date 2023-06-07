@@ -14,13 +14,13 @@ dependencies:
   cupertino_icons: ^1.0.2
   dartz: ^0.10.1
   easy_localization: ^3.0.1
+  envied: ^0.3.0+3
   firebase_core: ^2.8.0
   firebase_dynamic_links: ^5.0.17
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.2
   flutter_cache_manager: ^3.3.0
-  flutter_dotenv: ^5.0.2
   flutter_svg: ^2.0.4
   font_awesome_flutter: ^10.4.0
   freezed_annotation: ^2.2.0
@@ -35,6 +35,7 @@ dependencies:
 dev_dependencies:
   auto_route_generator: ^6.0.0
   build_runner: null
+  envied_generator: ^0.3.0+3
   flutter_launcher_icons: ^0.12.0
   flutter_lints: ^2.0.0
   flutter_test:
