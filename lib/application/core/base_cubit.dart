@@ -31,6 +31,10 @@ abstract class BaseCubit<T> extends Cubit<T> {
     );
   }
 
+  void setError(String? message) {
+    showNotification(message ?? '', isError: true);
+  }
+
   void setLoading(bool loading) {}
 
   void resetFailure() {

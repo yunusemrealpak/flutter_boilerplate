@@ -1,4 +1,4 @@
-import 'package:busbus/busbus.dart';
+import 'package:busenet/busenet.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 
@@ -9,7 +9,6 @@ import '../../domain/auth/model/user.dart';
 import '../../domain/cache/model/token_model.dart';
 import '../../domain/network/base_repository.dart';
 import '../../domain/network/model/failure.dart';
-import '../../domain/network/model/sample_response_model.dart';
 import '../../domain/network/network_paths.dart';
 
 @LazySingleton(as: IAuthRepository)
@@ -22,11 +21,15 @@ class AuthRepository extends IAuthRepository {
 
   @override
   EitherFuture<User> login(String email, String password) async {
-    final response = await coreDio.send<User, User>(
+    final response = await manager.fetch<User, User>(
       NetworkPaths.login,
       parserModel: const User(),
       type: HttpTypes.post,
-    ) as SampleResponseModel;
+      data: {
+        'email': email,
+        'password': password,
+      },
+    );
 
     switch (response.statusCode) {
       case 1:
@@ -37,8 +40,7 @@ class AuthRepository extends IAuthRepository {
 
         final tokenModel = _cacheManager.getData();
         await _cacheManager.setData(
-          tokenModel?.copyWith(accessToken: user.token) ??
-              TokenModel(accessToken: user.token),
+          tokenModel?.copyWith(accessToken: user.token) ?? TokenModel(accessToken: user.token),
         );
 
         return right(user);

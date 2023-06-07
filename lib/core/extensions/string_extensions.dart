@@ -27,3 +27,7 @@ extension StringExtensions on String {
         r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+",
       ).hasMatch(this);
 }
+
+extension NullableStringExtension on String? {
+  bool get isNullOrEmpty => this == null || (this?.isEmpty ?? false);
+}
