@@ -33,8 +33,9 @@ class AuthRepository extends IAuthRepository {
 
     switch (response.statusCode) {
       case 1:
-        final status = response.status ?? false;
-        if (!status) return left(Failure(message: response.errorMessage));
+        // - For SampleResponseModel
+        // final status = response.status ?? false;
+        // if (!status) return left(Failure(message: response.errorMessage));
 
         final user = response.data as User;
 
