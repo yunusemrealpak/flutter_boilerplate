@@ -5,6 +5,29 @@ Flutter projeleri için bir şablon olarak kullanılabilir. Bu şablon, uygulama
 
 // üstteki yazıyı ingilizceye çevirip buraya yapıştırın
 
+## Paketler
+
+- auto_route
+- easy_localization
+- dio
+- flutter_bloc
+- freezed
+- get_it, injectable
+- hive_flutter, shared_preferences
+- firebase_dynamic_links
+
+## Features
+
+- Authentication
+- Localization
+- Dynamic Links
+- Navigation
+- State Management
+- Dependency Injection
+- Environment Variables
+- Responsive UI
+- Flavors (dev, prod)
+
 ## Kurulum
 
 Bu projeyi klonlayın ve geliştirme ortamınızı ayarlayın.
@@ -16,11 +39,10 @@ Bu projeyi klonlayın ve geliştirme ortamınızı ayarlayın.
 
 ## Kullanım
 
-- Bu projeyi klonladıktan sonra, `.env` dosyasındaki api url'leri değiştirmeyi unutmayın. Aksi takdirde, uygulamanız çalışmayacaktır.
+- Bu projeyi klonladıktan sonra, `.env` dosyalarındaki api url'leri değiştirmeyi unutmayın. Aksi takdirde, uygulamanız çalışmayacaktır.
 
 ```bash
   API_URL=<your-api-url>
-  DEV_API_URL=<your-dev-api-url>
 ```
 
 - Android için android/app/build.gradle altında flavor larınızı ayarlayın.
@@ -46,31 +68,6 @@ Bu projeyi klonlayın ve geliştirme ortamınızı ayarlayın.
 - Harika. Artık projenizi çalıştırmaya hazırsınız. VS Code da launch.json dosyası ayarlı bir şekilde gelecek. Ana dizinde .vscode altında istediğiniz gibi düzenleme yapabilirsiniz.
 
 ![firebase](./screenshots/launch_type.png)
-
-## Paketler
-
-- auto_route
-- dartz
-- easy_localization
-- dio
-- flutter_bloc
-- flutter_dotenv
-- freezed
-- get_it, injectable
-- hive_flutter, shared_preferences
-- firebase_dynamic_links
-
-## Features
-
-- Authentication
-- Localization
-- Dynamic Links
-- Navigation
-- State Management
-- Dependency Injection
-- Environment Variables
-- Responsive UI
-- Flavors (dev, prod)
 
 ### Flavor
 
